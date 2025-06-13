@@ -1,6 +1,6 @@
 {
-  "name": "kidle-app-backend",
-  "module": "index.ts",
+  "name": "kindle-app-backend",
+  "module": "src/index.ts",
   "type": "module",
   "private": true,
   "scripts": {
