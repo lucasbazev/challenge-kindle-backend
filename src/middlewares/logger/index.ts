@@ -11,9 +11,11 @@ export function loggerMiddleware(
 
   console.log("Origin", req.headers.origin);
 
+  console.log("body", req.body);
+
   console.log(
     `Route: ${req.url}\nRequest Method: ${req.method}\nRequest Body: ${
-      !!Object.keys(req.body).length
+      !!Object.keys(req?.body)?.length
         ? JSON.stringify(req.body, undefined, 2)
         : "No body"
     }`,
