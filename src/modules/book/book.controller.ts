@@ -1,5 +1,4 @@
 import type { Request, Response } from "express";
-import type { Book } from "./book.entity.ts";
 import { BookService } from "./book.service.ts";
 import type { CreateBookDto } from "./book.interfaces.ts";
 

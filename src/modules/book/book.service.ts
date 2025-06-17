@@ -7,9 +7,7 @@ export const BookService = {
   getById: async function (id: string) {},
 
   create: async function (payload: CreateBookDto) {
-    const { title, description, status } = payload;
-
-    const book = new Book(title, description, status);
+    const book = await Book.create(payload);
 
     return book;
   },

@@ -1,19 +1,20 @@
-import { Types } from "mongoose";
+import { model, Schema } from "mongoose";
 export type BookStatus = "BOUGHT" | "READING" | "FINISHED";
 
-export class Book {
-  private _id: Types.ObjectId = new Types.ObjectId();
-  private title: string;
-  private description?: string;
-  private status: BookStatus;
+export const Book = model(
+  "Book",
+  new Schema({
+    title: {
+      required: true,
+      type: String,
+    },
 
-  constructor(title: string, description?: string, status?: BookStatus) {
-    if (!title) {
-      throw new Error("Title is required");
-    }
+    description: String,
 
-    this.title = title;
-    this.description = description;
-    this.status = status || "BOUGHT";
-  }
-}
+    status: {
+      type: String,
+      enum: ["BOUGHT", "READING", "FINISHED"],
+      default: "BOUGHT",
+    },
+  }),
+);
