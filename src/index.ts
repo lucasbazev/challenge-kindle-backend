@@ -1,4 +1,5 @@
 import e from "express";
+import cors from "cors";
 import "./providers/mongodb.ts";
 import { env } from "./utils/env.ts";
 import { loggerMiddleware } from "./middlewares/logger/index.ts";
@@ -7,6 +8,7 @@ import { appRouter } from "./app.router.ts";
 const app = e();
 const { PORT, LOGGER } = env;
 
+app.use(cors());
 app.use(e.json());
 app.use(appRouter);
 
