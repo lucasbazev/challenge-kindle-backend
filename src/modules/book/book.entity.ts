@@ -7,6 +7,7 @@ export const Book = model(
     title: {
       required: true,
       type: String,
+      unique: true,
     },
 
     description: String,
