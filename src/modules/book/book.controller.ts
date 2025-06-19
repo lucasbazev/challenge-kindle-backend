@@ -6,7 +6,7 @@ import type { BookStatus } from "./book.entity.ts";
 export const BookController = {
   getAll: async (req: Request, res: Response) => {
     try {
-      const query = req.query as Record<string, string>;
+      const query = req.query as Record<string, any>;
       const data = await BookService.getAll(query);
 
       res.status(200).json(data);

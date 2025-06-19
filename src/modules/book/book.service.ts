@@ -2,8 +2,13 @@ import { Book, type BookStatus } from "./book.entity.ts";
 import type { CreateBookDto } from "./book.interfaces.ts";
 
 export const BookService = {
-  getAll: async function (query?: Record<string, string>) {
-    return await Book.find({ ...query }).sort({ title: 1 });
+  getAll: async function (query: Record<string, string>) {
+    const filters = {
+      ...query,
+      title: { $regex: query.title || "", $options: "i" },
+    };
+
+    return await Book.find(filters).sort({ title: 1 });
   },
 
   getById: async function (id: string) {
