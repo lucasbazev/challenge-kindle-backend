@@ -8,9 +8,10 @@
     "dev:logger": "LOGGER=true bun --watch src/index.ts"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.7.10",
     "@types/bun": "latest",
-    "@types/express": "^5.0.1",
     "@types/cors": "^2.8.18",
+    "@types/express": "^5.0.1",
     "@types/node": "^22.15.18"
   },
   "peerDependencies": {
