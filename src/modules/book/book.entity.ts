@@ -1,5 +1,5 @@
 import { model, Schema } from "mongoose";
-export type BookStatus = "BOUGHT" | "READING" | "FINISHED";
+export type BookStatus = "WISHLIST" | "READING" | "FINISHED";
 
 export const Book = model(
   "Book",
@@ -14,8 +14,8 @@ export const Book = model(
 
     status: {
       type: String,
-      enum: ["BOUGHT", "READING", "FINISHED"],
-      default: "BOUGHT",
+      enum: ["WISHLIST", "READING", "FINISHED"],
+      default: "WISHLIST",
     },
   }),
 );
